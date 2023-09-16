@@ -1,4 +1,4 @@
-from utils.uri import uri_validator
+from tils.uri import uri_validator
 
 def test_uri_validator():
 
