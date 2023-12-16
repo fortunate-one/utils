@@ -1,4 +1,5 @@
 pytest
 twine
 build
+python-dotenv
 -e .

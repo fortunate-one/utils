@@ -4,17 +4,33 @@ Collection of Python utility functions
 
 ## Deployment to PyPi
 
-Add credential to `~/.pypirc` file.
+Create a `.env` file with the following content (add pypi token within quotes).
 
 ```bash
-echo "[pypi]
-username = __token__
-password = $PIPY_TOKEN" >> ~/.pypirc
+PYPI-USER = "__token__"
+PYPI-TOKEN = ""
 ```
 
-Build the package and then upload it to PyPi.
+Create a virtual environment and install the dependencies.
+
+Linux
 
 ```bash
-python -m build
-python -m twine upload --repository pypi dist/*
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Run deployment script.
+
+```bash
+python deploy.py
 ```
